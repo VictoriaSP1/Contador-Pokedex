@@ -1,0 +1,49 @@
+&nbsp;
+<div class="row text-center">
+  <div class="col">
+    <h1>Contador</h1>
+    <h2>{{ contador }}</h2>
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col">
+    <button class="btn btn-primary" (click)="incrementar()">Incrementar</button>
+    <button class="btn btn-info" (click)="decrementar()">Decrementar</button>
+  </div>
+</div>
+&nbsp;
+<div class="row text-center">
+  <div class="col">
+    <button class="btn btn-success" (click)="obtenerPokemon()">Obtener Pokemon</button>
+  </div>
+</div>
+&nbsp;
+<div class="row text-center" *ngIf=" Pokemon.name != null || contador < 1 ">
+  <div class="col">
+    <b>Nombre de Pokemon: </b>
+    <p>{{ Pokemon.name | titlecase}}</p>
+  </div>
+</div>
+<div class="row text-center" *ngIf=" Pokemon.sprites.front_default != null ">
+  <div class="col">
+    <img src="{{Pokemon.sprites.front_default}}">
+  </div>
+</div>
+&nbsp;
+<div class="row text-center" *ngIf=" Pokemon.types[0].type.name != null ">
+  <div class="col">
+    <b>Tipo: </b>
+    <p>{{Pokemon.types[0].type.name | titlecase}}</p>
+  </div>
+</div>
+
+
+
+<!--<hr>
+<div class="row text-center">
+  <div class="col">
+    <app-hijo [contador] = "contador" (cambioContador)="contador = $event"></app-hijo>
+  </div>
+</div>-->
+
+
